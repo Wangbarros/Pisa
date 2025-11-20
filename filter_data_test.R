@@ -1,4 +1,7 @@
 #setwd("~/Dropbox/PostDoc/Pisa")
+library(dplyr)
+library(stringr)
+
 
 df2022 = read.csv("data/df2022.csv")
 df2018 = read.csv("data/df2018.csv")
@@ -8,9 +11,32 @@ df2009 = read.csv("data/df2009.csv")
 df2006 = read.csv("data/df2006.csv")
 df2003 = read.csv("data/df2003.csv")
 
+df2022 <- df2022 %>%
+  select(-starts_with("FL"), -starts_with("WB"))
+
+df2018 <- df2018 %>%
+  select(-starts_with("FL"), -starts_with("WB"))
+
+df2015 <- df2015 %>%
+  select(-starts_with("FL"), -starts_with("WB"))
+
+df2012 <- df2012 %>%
+  select(-starts_with("FL"), -starts_with("WB"))
+
+df2009 <- df2009 %>%
+  select(-starts_with("FL"), -starts_with("WB"))
+
+df2006 <- df2006 %>%
+  select(-starts_with("FL"), -starts_with("WB"))
+
+df2003 <- df2003 %>%
+  select(-starts_with("FL"), -starts_with("WB"))
+
+
+
 unique(df2022$CNT)
-c_list = c("AUS", "BRA", "KOR","ESP", "FIN","MEX",
-           "POL" ,"SWE" ,"USA")
+c_list = c("AUS", "ARG","BRA", "KOR","ESP", "FIN","MEX", "QAT","JPN", "DEU", "MAR",
+           "POL" ,"SWE" ,"USA", "LTU", "PRT", "SGP")
 
 #filter out FL and WB
 
